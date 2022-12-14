@@ -7,17 +7,17 @@ OSQuery Extension wtih eBPF extends the core osquery on Linux by adding real tim
 The extension bridges the feature gap of osquery on Linux in comparison to auditd adding the following into the osquery: 
 1. Granular File Integrity Monitoring (FIM) 
 2. Process Auditing 
-3. Socket (listen, accept, connect and close) events 
-4. Ability to query the current status of security products installed on the system 
-5. Ability to monitor application specific log files
+3. Socket events (listen, accept, connect and close) give information like protocol,local_address, remote_address, local_port and remote_port
+4. Ability to monitor application specific log files
 
 
-It uses new kernel functionality (eBPF) to capture the process, socket, and other types of events.
-With eBPF enabled we will have access to tables bpf_process_events, bpf_file_events and bpf_socket_events that are equivalent to the standard process_events and socket_events tables.
+It uses new kernel functionality (eBPF) to capture the process, file and socket events.
+With eBPF enabled we will have access to tables bpf_process_events, bpf_file_events and bpf_socket_events that are equivalent to the standard process_events, file_event and socket_events tables.
 
 Enabling eBPF for osquery on Linux requires the following flags:
 
 
 	 --disable_events=false --enable_bpf_events=true
+
 # Container Monitoring
 A further advantage when using eBPF rather than the audit subsystem is greater visibility into containers and management systems including both Docker and Kubernetes.
