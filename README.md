@@ -18,10 +18,6 @@ With eBPF enabled we will have access to tables bpf_process_events, bpf_file_eve
 Enabling eBPF for osquery on Linux requires the following flags:
 
 
-boolean value can be given as true/t 
-
-host_identifier| is_open | event_time
-
 	 --disable_events=false --enable_bpf_events=true
-Container Monitoring
+# Container Monitoring
 A further advantage when using eBPF rather than the audit subsystem is greater visibility into containers and management systems including both Docker and Kubernetes.
