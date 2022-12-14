@@ -17,15 +17,7 @@ With eBPF enabled we will have access to tables bpf_process_events, bpf_file_eve
 
 Enabling eBPF for osquery on Linux requires the following flags:
 
-------------------------------------------------------
-  --disable_events=false --enable_bpf_events=true
----
 
-Event list 
-/event/list
-Request type: GET
-Parameters: filter Value: JSON containing at least one field from [host_identifier, is_open, start_time, end_time]
-Response: List of all events filtered using filter (where host id == host_identifier AND, isopen = is_open, AND event time >= start_time AND event time <= end_time)
 boolean value can be given as true/t 
 
 host_identifier| is_open | event_time
